@@ -68,7 +68,7 @@ public class PalmLeavesModelLoader implements IModelLoader<PalmLeavesModelGeomet
      * @return The type of model the class is loading. Useful for warnings when using sub-classes.
      */
     protected String getModelTypeName () {
-        return "Atum Palm Fronds";
+        return "Neapolitan Banana Palm Fronds";
     }
 
 }
