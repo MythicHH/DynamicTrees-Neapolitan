@@ -25,7 +25,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesNeapolitan.MOD_ID)
 public class DynamicTreesNeapolitan
 {
@@ -40,8 +39,6 @@ public class DynamicTreesNeapolitan
         MinecraftForge.EVENT_BUS.register(this);
 
         RegistryHandler.setup(MOD_ID);
-
-        DTNeapolitanRegistries.setup();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

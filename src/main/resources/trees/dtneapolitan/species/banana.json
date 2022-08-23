@@ -29,8 +29,16 @@
   "can_craft_seed_to_sapling": false,
   "sapling_shape": "slim_sapling",
   "acceptable_soils": ["dirt_like", "sand_like", "gravel_like"],
+  "fruits": [
+    "dtneapolitan:banana"
+  ],
   "features" : [
-    "dtneapolitan:banana_fruit"
+    {
+      "name": "dtneapolitan:banana_fruit",
+      "properties": {
+        "fruit": "dtneapolitan:banana"
+      }
+    }
   ],
   "drop_creators": [
     "log",
