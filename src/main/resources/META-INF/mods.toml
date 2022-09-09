@@ -7,10 +7,8 @@ issueTrackerURL="https://github.com/supermassimo/DynamicTrees-ExC/issues"
 modId="dtneapolitan"
 version="${file.jarVersion}"
 displayName="Dynamic Trees for Neapolitan"
-
-updateJSONURL="https://github.com/supermassimo/DynamicTrees-ExC/blob/1.16.5/.DONE/DynamicTrees-Neapolitan/version_info.json?raw=true"
+updateJSONURL="https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/Neapolitan.json?raw=true"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-neapolitan"
-
 authors="Max Hyper"
 description='''
 Compatibility Mod between Dynamic trees and Neapolitan
