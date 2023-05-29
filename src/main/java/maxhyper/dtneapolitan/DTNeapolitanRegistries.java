@@ -2,21 +2,16 @@ package maxhyper.dtneapolitan;
 
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
 import com.ferreusveritas.dynamictrees.api.registry.TypeRegistryEvent;
-import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
+import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.systems.fruit.Fruit;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
-import com.ferreusveritas.dynamictrees.trees.Species;
-import maxhyper.dtneapolitan.blocks.BananaLeavesProperties;
-import maxhyper.dtneapolitan.fruits.BananaFruit;
-import maxhyper.dtneapolitan.genfeatures.DTNeapolitanGenFeatures;
-import maxhyper.dtneapolitan.trees.BananaSpecies;
-import net.minecraft.util.ResourceLocation;
+import com.ferreusveritas.dynamictrees.systems.genfeature.GenFeature;
+import com.ferreusveritas.dynamictrees.tree.species.Species;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DTNeapolitanRegistries {
-
     public static final ResourceLocation BANANA = new ResourceLocation(DynamicTreesNeapolitan.MOD_ID, "banana");
 
     @SubscribeEvent
@@ -35,8 +30,7 @@ public class DTNeapolitanRegistries {
     }
 
     @SubscribeEvent
-    public static void onGenFeatureRegistry(final RegistryEvent<GenFeature> event) {
+    public static void onGenFeatureRegistry(final com.ferreusveritas.dynamictrees.api.registry.RegistryEvent<GenFeature> event) {
         DTNeapolitanGenFeatures.register(event.getRegistry());
     }
-
 }

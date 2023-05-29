@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter
 
 fun property(key: String) = project.findProperty(key).toString()
 
+apply(from = "https://gist.githubusercontent.com/Harleyoc1/4d23d4e991e868d98d548ac55832381e/raw/applesiliconfg.gradle")
+
 plugins {
     id("java")
     id("net.minecraftforge.gradle")
@@ -26,6 +28,7 @@ repositories {
     }
     maven("https://harleyoconnor.com/maven")
     maven("https://squiddev.cc/maven/")
+    mavenLocal()
 }
 
 val modName = property("modName")
@@ -38,7 +41,6 @@ group = property("group")
 
 minecraft {
     mappings("parchment", "${property("mappingsVersion")}-$mcVersion")
-    accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
 
     runs {
         create("client") {
@@ -67,7 +69,9 @@ minecraft {
                 "--all",
                 "--output", file("src/generated/resources/"),
                 "--existing", file("src/main/resources"),
-                "--existing-mod", "dynamictrees"
+                "--existing-mod", "dynamictrees",
+                "--existing-mod", "quark",
+                "--existing-mod", "dynamictreesplus"
             )
         }
     }
@@ -78,26 +82,27 @@ sourceSets.main.get().resources {
 }
 
 dependencies {
-    minecraft("net.minecraftforge:forge:${mcVersion}-${property("forgeVersion")}")
+    minecraft("net.minecraftforge:forge:$mcVersion-${property("forgeVersion")}")
 
     implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
-    implementation(fg.deobf("curse.maven:abnormals-core-382216:3607198")) // Note: now called Blueprint in newer versions
-    implementation(fg.deobf("curse.maven:neapolitan-382016:3567243"))
+    //implementation(fg.deobf("vazkii.autoreglib:AutoRegLib:${property("arlVersion")}"))
+    implementation(fg.deobf("curse.maven:neapolitan-382016:3881528"))
 
-    runtimeOnly(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
-    runtimeOnly(fg.deobf("curse.maven:hwyla-253449:3033593"))
+    //implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:3970956"))
     runtimeOnly(fg.deobf("mezz.jei:jei-$mcVersion:${property("jeiVersion")}"))
-    runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
     runtimeOnly(fg.deobf("org.squiddev:cc-tweaked-$mcVersion:${property("ccVersion")}"))
-    runtimeOnly(fg.deobf("com.harleyoconnor.suggestionproviderfix:SuggestionProviderFix:$mcVersion-${property("suggestionProviderFixVersion")}"))
+    runtimeOnly(fg.deobf("com.harleyoconnor.suggestionproviderfix:SuggestionProviderFix-1.18.1:${property("suggestionProviderFixVersion")}"))
+    runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:${property("patchouliVersion")}"))
 }
 
 tasks.jar {
     manifest.attributes(
-        "Specification-Title" to modName,
+        "Specification-Title" to project.name,
         "Specification-Vendor" to "Max Hyper",
         "Specification-Version" to "1",
-        "Implementation-Title" to modName,
+        "Implementation-Title" to project.name,
         "Implementation-Version" to project.version,
         "Implementation-Vendor" to "Max Hyper",
         "Implementation-Timestamp" to DateTimeFormatter.ISO_INSTANT.format(Instant.now())
@@ -111,21 +116,20 @@ java {
     withSourcesJar()
 
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
-
 
 curseforge {
     if (project.hasProperty("curseApiKey") && project.hasProperty("curseFileType")) {
         apiKey = property("curseApiKey")
 
         project {
-            id = "508225"
+            id = "386753"
 
             addGameVersion(mcVersion)
 
-            changelog = "Changelog will be added shortly..."
+            changelog = file("build/changelog.txt")
             changelogType = "markdown"
             releaseType = property("curseFileType")
 
@@ -134,9 +138,7 @@ curseforge {
             mainArtifact(tasks.findByName("jar")) {
                 relations {
                     requiredDependency("dynamictrees")
-                    requiredDependency("neapolitan")
-                    optionalDependency("dynamictreesplus")
-                    optionalDependency("chunk-saving-fix")
+                    requiredDependency("quark")
                 }
             }
         }
