@@ -70,8 +70,7 @@ minecraft {
                 "--output", file("src/generated/resources/"),
                 "--existing", file("src/main/resources"),
                 "--existing-mod", "dynamictrees",
-                "--existing-mod", "quark",
-                "--existing-mod", "dynamictreesplus"
+                "--existing-mod", "neapolitan"
             )
         }
     }
@@ -88,7 +87,8 @@ dependencies {
     //implementation(fg.deobf("vazkii.autoreglib:AutoRegLib:${property("arlVersion")}"))
     implementation(fg.deobf("curse.maven:neapolitan-382016:3881528"))
 
-    //implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+    runtimeOnly(fg.deobf("curse.maven:blueprint-382216:3991478"))
+    //runtimeOnly(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
 
     runtimeOnly(fg.deobf("curse.maven:jade-324717:3970956"))
     runtimeOnly(fg.deobf("mezz.jei:jei-$mcVersion:${property("jeiVersion")}"))

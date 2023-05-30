@@ -1,6 +1,0 @@
-{
-  "only_if_loaded": "dynamictreesplus",
-  "primitive_cap": "quark:glow_shroom_block",
-  "material_color": "DIRT",
-  "age_zero_shape": "dtquark:glow_shroom_age0"
-}
