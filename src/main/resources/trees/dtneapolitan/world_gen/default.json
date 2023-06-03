@@ -21,7 +21,7 @@
         "method" : "splice_before",
         "random" : {
           "dtneapolitan:banana" : 1,
-          "..." : 90
+          "..." : 150
         }
       }
     }
@@ -34,7 +34,7 @@
         "method" : "splice_before",
         "random" : {
           "dtneapolitan:banana" : 1,
-          "..." : 30
+          "..." : 60
         }
       }
     }
@@ -48,7 +48,7 @@
         "method" : "splice_before",
         "random" : {
           "dtneapolitan:banana" : 1,
-          "..." : 90
+          "..." : 150
         }
       }
     }
@@ -62,7 +62,7 @@
         "method" : "splice_before",
         "random" : {
           "dtneapolitan:banana" : 1,
-          "..." : 150
+          "..." : 250
         }
       }
     }
