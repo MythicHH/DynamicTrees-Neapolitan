@@ -1,7 +1,6 @@
 {
   "type": "dtneapolitan:banana",
-  "_todo": "Remove block registry name in 1.18 so it is called `dtneapolitan:banana`.",
-  "block_registry_name": "banana_fruit",
+  "block_registry_name": "banana_bunch",
   "item_stack": "neapolitan:banana_bunch",
   "block_shapes": [
     { "function": "fruit", "parameters": { "radius": 1, "height": 3, "stem_length": -1, "fraction": 16 } },
