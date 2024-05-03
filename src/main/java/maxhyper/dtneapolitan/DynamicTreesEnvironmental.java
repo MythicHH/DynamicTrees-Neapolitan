@@ -6,7 +6,7 @@ import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.block.rooty.SoilProperties;
 import com.ferreusveritas.dynamictrees.tree.family.Family;
 import com.ferreusveritas.dynamictrees.tree.species.Species;
-import com.teamabnormals.neapolitan.core.NeapolitanConfig;
+import com.teamabnormals.neapolitan.core.EnvironmentalConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
-@Mod(DynamicTreesNeapolitan.MOD_ID)
+@Mod(DynamicTreesEnvironmental.MOD_ID)
 public class DynamicTreesEnvironmental {
     public static final String MOD_ID = "dtenvironmental";
 
@@ -35,8 +35,7 @@ public class DynamicTreesEnvironmental {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        NeapolitanConfig.COMMON.bananaPlantBeachGeneration.set(false);
-        NeapolitanConfig.COMMON.bananaPlantJungleGeneration.set(false);
+        EnvironmentalConfig.COMMON.willowTreeGeneration.set(false);
     }
 
     private void gatherData(final GatherDataEvent event) {
