@@ -1,10 +1,9 @@
-package maxhyper.dtneapolitan;
+package maxhyper.dtenvironmental;
 
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
 import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.block.rooty.SoilProperties;
-import com.ferreusveritas.dynamictrees.systems.fruit.Fruit;
 import com.ferreusveritas.dynamictrees.tree.family.Family;
 import com.ferreusveritas.dynamictrees.tree.species.Species;
 import com.teamabnormals.neapolitan.core.NeapolitanConfig;
@@ -17,10 +16,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod(DynamicTreesNeapolitan.MOD_ID)
-public class DynamicTreesNeapolitan {
-    public static final String MOD_ID = "dtneapolitan";
+public class DynamicTreesEnvironmental {
+    public static final String MOD_ID = "dtenvironmental";
 
-    public DynamicTreesNeapolitan() {
+    public DynamicTreesEnvironmental() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::clientSetup);
@@ -44,7 +43,6 @@ public class DynamicTreesNeapolitan {
         GatherDataHelper.gatherAllData(MOD_ID, event,
                 Family.REGISTRY,
                 Species.REGISTRY,
-                Fruit.REGISTRY,
                 LeavesProperties.REGISTRY);
     }
 
