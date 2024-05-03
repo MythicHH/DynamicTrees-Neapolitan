@@ -1,45 +1,45 @@
 modLoader="javafml"
 loaderVersion="[40,41)"
 license="MIT"
-issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees-Neapolitan/issues"
+issueTrackerURL="https://github.com/MythicHH/DynamicTrees-Neapolitan/issues"
 
 [[mods]]
-modId="dtneapolitan"
+modId="dtenvironmental"
 version="${file.jarVersion}"
-displayName="Dynamic Trees for Neapolitan"
+displayName="Dynamic Trees for Environmental"
 
 updateJSONURL="https://github.com/DynamicTreesTeam/DynamicTreesVersionInfo/blob/master/Add-ons/Neapolitan.json?raw=true"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-neapolitan"
 
-authors="Max Hyper" #optional
+authors="Max Hyper, MythicHH" #optional
 description='''
-Compatibility Mod between Dynamic trees and Neapolitan
+Compatibility Mod between Dynamic trees and Environmental
 '''
 
-[[dependencies.dtneapolitan]]
+[[dependencies.dtenvironmental]]
     modId="forge"
     mandatory=true
     versionRange="[40,41)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.dtneapolitan]]
+[[dependencies.dtenvironmental]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.dtneapolitan]]
+[[dependencies.dtenvironmental]]
     modId="dynamictrees"
     mandatory=true
     versionRange="[1.0.0,)"
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.dtneapolitan]]
-    modId="neapolitan"
+[[dependencies.dtenvironmental]]
+    modId="environmental"
     mandatory=true
-    versionRange="[3.0.0,4.0.0)"
+    versionRange="[2.0.0,3.0.0)"
     ordering="AFTER"
     side="BOTH"
