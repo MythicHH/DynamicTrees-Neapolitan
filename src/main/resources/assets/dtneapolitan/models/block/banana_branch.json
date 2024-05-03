@@ -1,7 +1,7 @@
 {
   "loader": "dynamictrees:branch",
   "textures": {
-    "bark": "neapolitan:block/banana_stalk",
-    "rings": "neapolitan:block/banana_stalk_top"
+    "bark": "environmental:block/willow_log",
+    "rings": "environmental:block/willow_log_top"
   }
 }
