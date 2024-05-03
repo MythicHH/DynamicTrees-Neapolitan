@@ -25,9 +25,7 @@
             }
           ],
           "items": {
-            "neapolitan:small_banana_frond": 1,
-            "neapolitan:banana_frond": 1,
-            "neapolitan:large_banana_frond": 1
+            "environmental:willow_sapling": 1,
           }
         }
       ]
