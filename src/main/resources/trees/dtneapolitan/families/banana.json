@@ -1,7 +1,7 @@
 {
-  "common_leaves": "dtneapolitan:banana",
-  "common_species": "dtneapolitan:banana",
-  "primitive_log": "neapolitan:banana_stalk",
+  "common_leaves": "dtenvironmental:willow_log",
+  "common_species": "dtenvironmental:willow_log",
+  "primitive_log": "environmental:willow_log",
   "generate_stripped_branch": false,
   "max_branch_radius": 8,
   "primary_thickness": 3,
